@@ -1,10 +1,23 @@
+# JstatExample
+## How to ...
+
+### ... run
+```
+jbang run JstatExample.java
+```
+
+### ... jstat
+```
+jstat -gc $(jps | grep JstatExample | cut -d " " -f1) 1s
+```
+
 # OQLExample
 
 ## How to ...
 
 ### ... run
 ```
-jbang run HeapDumpAndHistogramExample
+jbang run HeapDumpAndHistogramExample.java
 ```
 
 ### ... query in OQL from Eclipse MAT
