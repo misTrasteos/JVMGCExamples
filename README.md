@@ -67,3 +67,13 @@ jmap -histo:live $(jps | grep HeapDumpAndHistogramExample | cut -d " " -f1)
 ```
 jbang run VisualVMExample.java
 ```
+
+# JFREventsExample
+
+## How to ...
+
+### ... run
+
+```
+jbang --jfr=filename=JFREventsExample.jfr JFREventsExample.java
+```
