@@ -59,3 +59,11 @@ This will force a FullGC
 ```
 jmap -histo:live $(jps | grep HeapDumpAndHistogramExample | cut -d " " -f1)
 ```
+
+# VisualVMExample
+## How to ...
+
+### ... run
+```
+jbang run VisualVMExample.java
+```
