@@ -5,6 +5,8 @@
 //JAVA_OPTIONS -Xmn6m -XX:SurvivorRatio=2
 //JAVA_OPTIONS -XX:-UseAdaptiveSizePolicy
 
+package org.example;
+
 import java.util.List;
 import java.util.LinkedList;
 
