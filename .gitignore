@@ -1,3 +1,5 @@
 *.hprof
 *.index
 *.threads
+*.zip
+

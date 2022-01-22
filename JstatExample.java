@@ -8,6 +8,8 @@
 //JAVA_OPTIONS -Xmn12m -XX:SurvivorRatio=2
 //JAVA_OPTIONS -XX:-UseAdaptiveSizePolicy
 
+package org.example;
+
 import org.apache.commons.collections4.queue.CircularFifoQueue;
 import java.util.Queue;
 
@@ -24,7 +26,5 @@ public class JstatExample {
 
             queue.add( RandomStringUtils.randomAlphanumeric( 10_000 ) );
         }
-
-        //System.out.println( queue.poll() );
     }
 }
