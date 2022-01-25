@@ -2,7 +2,7 @@ import jdk.jfr.Event;
 import jdk.jfr.Label;
 import jdk.jfr.Name;
 
-public class JFREventsExample {
+public class JFRCustomEventsExample {
 
 	@Name("com.sample.Duration")
 	@Label("MyDurationCustomEvent")
