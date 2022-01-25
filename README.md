@@ -77,3 +77,39 @@ jbang run VisualVMExample.java
 ```
 jbang --jfr=filename=JFREventsExample.jfr JFREventsExample.java
 ```
+
+
+# Young Generation Tunning Example
+## Start the server
+```
+jbang run -Dquarkus.http.port=10008 --java-options "-Xmn8m" YoungCollectionTunningExample.java
+```
+
+```
+jbang run -Dquarkus.http.port=10064 --java-options "-Xmn64m" YoungCollectionTunningExample.java
+```
+
+## Measure number of YoungGCs
+```
+jstat -gc $(jps | grep GeneratedMain | cut -d " " -f1)
+```
+
+## Run test
+
+### vegeta
+```
+echo "GET http://localhost:10008/MyObject" | vegeta attack -duration=15s -rate=25 | vegeta report --type=text
+```
+
+```
+echo "GET http://localhost:10064/MyObject" | vegeta attack -duration=15s -rate=25 | vegeta report --type=text
+```
+
+### k6
+```
+k6 run -e PORT=10008 k6.js
+```
+
+```
+k6 run -e PORT=10064 k6.js
+```
