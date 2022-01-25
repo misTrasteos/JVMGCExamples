@@ -3,6 +3,8 @@
 //JAVA_OPTIONS -Xint -XX:StartFlightRecording=dumponexit=true,filename=JFRCustomEventsExample.jfr
 
 /**
+ * https://docs.oracle.com/en/java/javase/17/jfapi/creating-and-recording-your-first-event.html
+ * 
  * jbang run JFRCustomEventsExample
  * jfr print JFRCustomEventsExample.jfr
  * jfr print --events org.event.CustomEvent JFRCustomEventsExample.jfr
