@@ -1,12 +1,12 @@
-/// jmap -histo:live $(jps | grep HeapDumpAndHistogramExample | cut -d " " -f1) | grep -i Patient
-/// jmap -dump:live,format=b,file=heap.hprof $(jps | grep HeapDumpAndHistogramExample | cut -d " " -f1)
+/// jmap -histo $(jps | grep HeapDumpAndHistogramExample | cut -d " " -f1) | grep -i MyObject
+/// jmap -histo:live $(jps | grep HeapDumpAndHistogramExample | cut -d " " -f1) | grep -i MyObject
 
-///JAVA_OPTIONS -XX:+UnlockExperimentalVMOptions -XX:+UseEpsilonGC
-//JAVA_OPTIONS -Xlog:gc*
-//JAVA_OPTIONS -Xms32m -Xmx32m
+/// jmap -dump:format=b,file=HeapDumpAndHistogramExample.hprof $(jps | grep HeapDumpAndHistogramExample | cut -d " " -f1)
+/// jmap -dump:live,format=b,file=HeapDumpAndHistogramExample.hprof $(jps | grep HeapDumpAndHistogramExample | cut -d " " -f1)
 
-//JAVA_OPTIONS -XX:NewSize=10m -XX:SurvivorRatio=3
-//JAVA_OPTIONS -XX:-UseAdaptiveSizePolicy
+//JAVA_OPTIONS -XX:+UseSerialGC -Xlog:gc*
+//JAVA_OPTIONS -Xms32m -Xmx32m -XX:NewSize=10m -XX:-UseAdaptiveSizePolicy
+//JAVA_OPTIONS -Xint
 
 package org.example;
 
@@ -19,10 +19,10 @@ public class HeapDumpAndHistogramExample {
     static class MyObject2{}
 
     public static void main(String... args) throws Exception {
-        List<MyObject1> objects1 = new LinkedList<MyObject1>();
+        List<MyObject1> reachable = new LinkedList<MyObject1>();
 
         for(int i=0; i< 10_000; i++){
-            objects1.add( new MyObject1() );
+            reachable.add( new MyObject1() );
             new MyObject2();
         }
 
