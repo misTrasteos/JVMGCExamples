@@ -5,9 +5,10 @@
 /**
  * https://docs.oracle.com/en/java/javase/17/jfapi/creating-and-recording-your-first-event.html
  * 
- * jbang run JFRCustomEventsExample
+ * jbang run JFRCustomEventsExample.java
  * jfr print JFRCustomEventsExample.jfr
  * jfr print --events org.event.CustomEvent JFRCustomEventsExample.jfr
+ * jfr print --events jdk.ObjectAllocationSample JFRCustomEventsExample.jfr
  */
 
 import jdk.jfr.Event;
