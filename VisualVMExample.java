@@ -1,9 +1,5 @@
-//JAVA_OPTIONS -XX:+UseSerialGC
-//JAVA_OPTIONS -Xlog:gc*
-//JAVA_OPTIONS -Xms16m -Xmx16m
-
-//JAVA_OPTIONS -Xmn6m -XX:SurvivorRatio=2
-//JAVA_OPTIONS -XX:-UseAdaptiveSizePolicy
+//JAVA_OPTIONS -XX:+UseSerialGC -Xlog:gc*
+//JAVA_OPTIONS -Xms16m -Xmx16m -Xmn6m -XX:SurvivorRatio=2 -XX:-UseAdaptiveSizePolicy
 
 package org.example;
 
